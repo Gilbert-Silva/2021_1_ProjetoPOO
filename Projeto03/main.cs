@@ -30,7 +30,5 @@ class MainClass {
     Console.Write("Produtos na categoria: ");
     Console.WriteLine(c2.GetDescricao());
     foreach (Produto p in v) Console.WriteLine(p);
-
-
   }
 }
