@@ -39,6 +39,7 @@ class MainClass {
     Console.WriteLine("7 - Produto - Atualizar");
     Console.WriteLine("8 - Produto - Excluir");
     Console.WriteLine("0 - Fim");
+    Console.WriteLine("----------------------------------");
     Console.Write("Informe uma opção: ");
     int op = int.Parse(Console.ReadLine());
     Console.WriteLine();
@@ -46,6 +47,7 @@ class MainClass {
   }
   public static void CategoriaListar() {
     Console.WriteLine("----- Lista de Categorias -----");
+    // Lista as categorias
     Categoria[] cs = ncategoria.Listar();
     if (cs.Length == 0) {
       Console.WriteLine("Nenhuma categoria cadastrada");
@@ -60,9 +62,9 @@ class MainClass {
     int id = int.Parse(Console.ReadLine());
     Console.Write("Informe uma descrição: ");
     string descricao = Console.ReadLine();
-    // Instanciar a classe de Categoria
+    // Instancia a classe de Categoria
     Categoria c = new Categoria(id, descricao);
-    // Inserção da categoria
+    // Insere a categoria
     ncategoria.Inserir(c);
   }
   public static void CategoriaAtualizar() {
@@ -72,23 +74,24 @@ class MainClass {
     int id = int.Parse(Console.ReadLine());
     Console.Write("Informe uma descrição: ");
     string descricao = Console.ReadLine();
-    // Instanciar a classe de Categoria
+    // Instancia a classe de Categoria
     Categoria c = new Categoria(id, descricao);
-    // Inserção da categoria
+    // Atualiza a categoria
     ncategoria.Atualizar(c);
   }
   public static void CategoriaExcluir() {
     Console.WriteLine("----- Exclusão de Categorias -----");
     CategoriaListar();
-    Console.Write("Informe o código da categoria a ser excluida: ");
+    Console.Write("Informe o código da categoria a ser excluída: ");
     int id = int.Parse(Console.ReadLine());
-    // Procurar a categoria com esse id
+    // Procura a categoria com esse id
     Categoria c = ncategoria.Listar(id);
     // Exclui a categoria do cadastro
     ncategoria.Excluir(c);
   }
   public static void ProdutoListar() {
     Console.WriteLine("----- Lista de Produtos -----");
+    // Lista os produtos
     Produto[] ps = nproduto.Listar();
     if (ps.Length == 0) {
       Console.WriteLine("Nenhum produto cadastrado");
@@ -112,9 +115,9 @@ class MainClass {
     int idcategoria = int.Parse(Console.ReadLine());
     // Seleciona a categoria a partir do id
     Categoria c = ncategoria.Listar(idcategoria);    
-    // Instanciar a classe de Produto
+    // Instancia a classe de Produto
     Produto p = new Produto(id, descricao, qtd, preco, c);
-    // Inserção da produto
+    // Insere o produto
     nproduto.Inserir(p);
   }
   public static void ProdutoAtualizar() {
@@ -133,19 +136,19 @@ class MainClass {
     int idcategoria = int.Parse(Console.ReadLine());
     // Seleciona a categoria a partir do id
     Categoria c = ncategoria.Listar(idcategoria);    
-    // Instanciar a classe de Produto
+    // Instancia a classe de Produto
     Produto p = new Produto(id, descricao, qtd, preco, c);
-    // Atualizar o produto
+    // Atualiza o produto
     nproduto.Atualizar(p);
   }
   public static void ProdutoExcluir() {
     Console.WriteLine("----- Exclusão de Produtos -----");
     ProdutoListar();
-    Console.Write("Informe o código do produto a ser excluido: ");
+    Console.Write("Informe o código do produto a ser excluído: ");
     int id = int.Parse(Console.ReadLine());
-    // Procurar o porduto com esse id
+    // Procura o produto com esse id
     Produto p = nproduto.Listar(id);
-    // Exclui a categoria do cadastro
+    // Exclui o produto
     nproduto.Excluir(p);
   }
 }

@@ -1,11 +1,14 @@
 using System;
 
 class Produto {
+  // Atributos do produto
   private int id;
   private string descricao;
   private int qtd;
   private double preco;
+  // Categoria do produto - Associação entre Categoria e Produto
   private Categoria categoria;
+  // Construtores
   public Produto(int id, string descricao, int qtd, double preco) {
     this.id = id;
     this.descricao = descricao;
@@ -15,6 +18,7 @@ class Produto {
   public Produto(int id, string descricao, int qtd, double preco, Categoria categoria) : this(id, descricao, qtd, preco) {
     this.categoria = categoria;
   }
+  // Métodos de acesso
   public void SetId(int id) {
     this.id = id;
   }
@@ -45,6 +49,7 @@ class Produto {
   public Categoria GetCategoria() {
     return categoria;
   }
+  // Retorna um texto com dados do objeto
   public override string ToString() {
     if (categoria == null)
       return id + " - " + descricao + " - estoque: " + qtd + " - preço: " + preco.ToString("0.00");
