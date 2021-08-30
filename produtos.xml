@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfProduto xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Produto>
+    <Id>1</Id>
+    <Descricao>Mouse USB</Descricao>
+    <Qtd>10</Qtd>
+    <Preco>100</Preco>
+    <CategoriaId>1</CategoriaId>
+  </Produto>
+  <Produto>
+    <Id>2</Id>
+    <Descricao>Fonte ATX</Descricao>
+    <Qtd>10</Qtd>
+    <Preco>200</Preco>
+    <CategoriaId>2</CategoriaId>
+  </Produto>
+</ArrayOfProduto>
