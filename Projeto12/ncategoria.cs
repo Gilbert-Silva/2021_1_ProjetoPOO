@@ -2,6 +2,7 @@ using System;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Linq;
 
 class NCategoria {
   private NCategoria() { }
@@ -33,16 +34,28 @@ class NCategoria {
 
   public Categoria[] Listar() {
     // Retorna um vetor com as categorias cadastradas
+    /*
     Categoria[] c = new Categoria[nc];
     Array.Copy(categorias, c, nc);
+    c.OrderBy(obj => obj.GetDescricao());
     return c;
+    */
+    return 
+      categorias.Take(nc).OrderBy(obj => obj.GetDescricao()).ToArray();
   }
 
   public Categoria Listar(int id) {
     // Localiza no vetor a categoria com o id informado
+    /*
     for (int i = 0; i < nc; i++)
       if (categorias[i].GetId() == id) return categorias[i];
     return null;  
+    
+    var r = categorias.Where(obj => obj.GetId() == id);
+    if (r.Count() == 0) return null;
+    return r.First();
+    */
+    return categorias.FirstOrDefault(obj => obj.GetId() == id);
   }
 
   public void Inserir(Categoria c) {

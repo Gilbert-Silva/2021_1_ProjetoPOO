@@ -31,4 +31,30 @@
       </VendaItem>
     </Itens>
   </Venda>
+  <Venda>
+    <Id>3</Id>
+    <Data>2022-03-10T10:01:31.204231+00:00</Data>
+    <Carrinho>false</Carrinho>
+    <ClienteId>2</ClienteId>
+    <Itens>
+      <VendaItem>
+        <Qtd>2</Qtd>
+        <Preco>100</Preco>
+        <ProdutoId>1</ProdutoId>
+      </VendaItem>
+    </Itens>
+  </Venda>
+  <Venda>
+    <Id>4</Id>
+    <Data>2022-03-10T11:37:34.477662+00:00</Data>
+    <Carrinho>false</Carrinho>
+    <ClienteId>2</ClienteId>
+    <Itens>
+      <VendaItem>
+        <Qtd>3</Qtd>
+        <Preco>200</Preco>
+        <ProdutoId>2</ProdutoId>
+      </VendaItem>
+    </Itens>
+  </Venda>
 </ArrayOfVenda>

@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Threading;
+using System.Linq;
 
 class MainClass {
   private static NCategoria ncategoria = NCategoria.Singleton;
@@ -326,6 +327,22 @@ class MainClass {
       foreach (VendaItem item in nvenda.ItemListar(v))
         Console.WriteLine("  " + item);
     }    
+    Console.WriteLine();
+
+    var r1 = vs.Select(v => new {
+      MesAno = v.Data.Month + "/" + v.Data.Year,
+      Total  = v.Itens.Sum(vi => vi.Qtd * vi.Preco)
+    });
+
+    foreach(var item in r1) Console.WriteLine(item);
+    Console.WriteLine();
+
+    var r2 = r1.GroupBy(item => item.MesAno,
+      (key, items) => new {
+        MesAno = key,
+        Total = items.Sum(item => item.Total) });
+
+    foreach(var item in r2) Console.WriteLine(item);
     Console.WriteLine();
   }
 

@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 class NVenda {
   private NVenda() { }
@@ -47,10 +48,13 @@ class NVenda {
 
   public List<Venda> Listar(Cliente c) {
     // Retorna uma lista com as vendas cadastradas do cliente c
+    /*
     List<Venda> vs = new List<Venda>();
     foreach(Venda v in vendas)
       if (v.GetCliente() == c) vs.Add(v);
     return vs;
+    */
+    return vendas.Where(v => v.GetCliente() == c).ToList();
   }
 
   public Venda ListarCarrinho(Cliente c) {
@@ -63,8 +67,10 @@ class NVenda {
   public void Inserir(Venda v, bool carrinho) {
     // Gera o id da vendas
     int max = 0;
-    foreach (Venda obj in vendas)
-      if (obj.GetId() > max) max = obj.GetId();
+    //foreach (Venda obj in vendas)
+    //  if (obj.GetId() > max) max = obj.GetId();
+
+    max = vendas.Max(obj => obj.GetId());
     v.SetId(max + 1);
     // Inserir a nova na lista de vendas
     vendas.Add(v);

@@ -84,6 +84,7 @@ class NProduto {
     if (p_atual == null) return;
     // Alterar os dados do produto
     p_atual.SetDescricao(p.GetDescricao());
+    //p_atual.SetQtd(p_atual.GetQtd() - emprestada);
     p_atual.SetQtd(p.GetQtd());
     p_atual.SetPreco(p.GetPreco());
     // Exclui o produto de sua categoria atual
